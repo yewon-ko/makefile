@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid bg-success text-center py-5">
+        <h1 class="display-4 text-black">자원봉사 찾기</h1>
+        <p class="lead text-black">누구나 쉽게 자원봉사 찾기</p>
+    </div>
+
+    <!-- 드롭다운 메뉴 추가 -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-3 mb-3">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="typeDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        개인/단체
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="typeDropdownMenuButton">
+                        <a class="dropdown-item" href="#" onclick="selectType('개인')">개인</a>
+                        <a class="dropdown-item" href="#" onclick="selectType('단체')">단체</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="regionDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        지역선택
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="regionDropdownMenuButton">
+                        <a class="dropdown-item" href="#" onclick="selectRegion('마포구')">마포구</a>
+                        <a class="dropdown-item" href="#" onclick="selectRegion('영등포구')">영등포구</a>
+                        <a class="dropdown-item" href="#" onclick="selectRegion('용산구')">용산구</a>
+                        <a class="dropdown-item" href="#" onclick="selectRegion('양천구')">양천구</a>
+                        <a class="dropdown-item" href="#" onclick="selectRegion('강서구')">강서구</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="monthDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        월 선택
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="monthDropdownMenuButton">
+                        <script>
+                            for (var i = 1; i <= 12; i++) {
+                                var month = i + '월'; // 항목의 텍스트를 생성
+                                document.write('<a class="dropdown-item" href="#" onclick="selectMonth(\'' + month + '\')">' + month + '</a>');
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dayDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        날 선택
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dayDropdownMenuButton">
+                        <!-- 1일부터 10일까지의 항목을 생성하는 반복문 -->
+                        <!-- JavaScript를 사용하여 드롭다운 메뉴 항목을 동적으로 생성 -->
+                        <script>
+                            for (var i = 1; i <= 31; i++) {
+                                var day = i + '일'; // 항목의 텍스트를 생성
+                                document.write('<a class="dropdown-item" href="#" onclick="selectDay(\'' + day + '\')">' + day + '</a>');
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 선택된 항목 표시를 위한 스크립트 추가 -->
+    <script>
+        function selectType(type) {
+            document.getElementById('typeDropdownMenuButton').innerText = type;
+        }
+
+        function selectRegion(region) {
+            document.getElementById('regionDropdownMenuButton').innerText = region;
+        }
+
+        function selectMonth(month) {
+            document.getElementById('monthDropdownMenuButton').innerText = month;
+        }
+
+        function selectDay(day) {
+            document.getElementById('dayDropdownMenuButton').innerText = day;
+        }
+    </script>
+
+    <!-- 부트스트랩 JS 및 jQuery 추가 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
